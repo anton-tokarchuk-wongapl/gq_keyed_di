@@ -12,8 +12,8 @@ builder.Services.AddCors(o => o.AddPolicy(
             .AllowAnyHeader();
     }));
 
-// uncomment next line to have a broken api.
-//builder.Services.AddKeyedSingleton<ISomeService, SomeService>("key");
+// comment next line to fix a broken api.
+builder.Services.AddKeyedSingleton<ISomeService, SomeService>("key");
 
 builder.Services
     .AddGraphQLServer()
